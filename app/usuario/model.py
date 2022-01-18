@@ -2,7 +2,7 @@ from ..extensions import db
 
 class Usuario(db.Model):
     __tablename__ = 'usuario'
-    id = db.Column(db.Integer, primary_key = True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key = True)
     nome = db.Column(db.String(30), nullable = False)
     cpf = db.Column(db.Integer, unique = True, nullable = False)
     email = db.Column(db.String(50), unique = True, nullable = False)
@@ -10,7 +10,7 @@ class Usuario(db.Model):
     endereço = db.Column(db.String(30), nullable = False)
 
     # carrinho(one) <-> usuario(one)
-    usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    carrinho_id = db.Column(db.Integer, db.ForeignKey('carrinho.id'))
 
     # requisicoes(many) <-> usuario(one)
     requisicao = db.relationship('Requisicoes', backref = 'requisicao_usuario')

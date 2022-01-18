@@ -3,7 +3,7 @@ from app.association import association_requisicoes_carros_compra, association_r
 
 class Requisicoes(db.Model):
         __tablename__ = 'requisicoes'
-        id = db.Column(db.Integer, primary_key = True, autoincrement=True)  
+        id = db.Column(db.Integer, primary_key = True)  
         data = db.Column(db.Date, nullable = False)
         preco_frete = db.Column(db.Integer, primary_key = True)
         preco_total = db.Column(db.Integer, primary_key = True)

@@ -4,6 +4,7 @@ from app.extensions import db, migrate
 
 from app.usuario.model import Usuario
 from app.carros.model import Carros
+from app.carrinho.model import Carrinho
 from app.carrosCompra.model import CarrosCompra
 from app.cupons.model import Cupons
 from app.motos.model import Motos

@@ -3,7 +3,7 @@ from app.extensions import db
 
 class Carros(db.Model):
         __tablename__ = 'carros'
-        id = db.Column(db.Integer, primary_key = True, autoincrement=True)
+        id = db.Column(db.Integer, primary_key = True)
         cor = db.Column(db.String(10), nullable = False)
         modelo = db.Column(db.String(20), nullable = False)
         marca = db.Column(db.String(20), nullable = False)
