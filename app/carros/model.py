@@ -3,7 +3,7 @@ from app.extensions import db
 
 class Carros(db.Model):
         __tablename__ = 'carros'
-        id = db.Column(db.Integer, primary_key = True)
+        id = db.Column(db.Integer, primary_key = True, autoincrement=True)
         cor = db.Column(db.String(10), nullable = False)
         modelo = db.Column(db.String(20), nullable = False)
         marca = db.Column(db.String(20), nullable = False)
@@ -12,6 +12,8 @@ class Carros(db.Model):
         estoque = db.Column(db.Integer, nullable = False)
         preco = db.Column(db.Integer, nullable = False)
 
+        # carros(one) <-> carros compra(many)
+        carro_compra = db.relationship('CarrosCompra', backref = 'carros_compra')
 
 
 
