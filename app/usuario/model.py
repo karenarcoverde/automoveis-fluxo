@@ -18,12 +18,12 @@ class Usuario(db.Model):
     # cupons(many) <-> usuario(one)
     cupom = db.relationship('Cupons', backref = 'cupons_usuario')
 
-def json(self):
-        return{
-            'nome':self.nome,
-            'cpf':self.cpf,
-            'email':self.email,
-            'telefone':self.telefone,
-            'endereço':self.endereço
-        }
+    def json(self):
+            return{
+                'nome':self.nome,
+                'cpf':self.cpf,
+                'email':self.email,
+                'telefone':self.telefone,
+                'endereço':self.endereço
+            }
 

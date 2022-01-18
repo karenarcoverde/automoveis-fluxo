@@ -11,8 +11,7 @@ class Cupons(db.Model):
 
         # cupons(many) <-> usuario(one)
         usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
-
-        
+         
         def json(self):
                 return{
                 'valor_desconto':self.valor_desconto,

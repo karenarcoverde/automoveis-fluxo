@@ -18,7 +18,6 @@ class CarrosCompra(db.Model):
         # requisicoes(many) <-> carros compra(many)
         requisicoes = db.relationship('Requisicoes', secondary=association_requisicoes_carros_compra, backref='requisicao_carros_compra')
 
-
         def json(self):
                 return{
                 'quantidade':self.quantidade,

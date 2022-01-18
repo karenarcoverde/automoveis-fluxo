@@ -17,13 +17,10 @@ class Carrinho(db.Model):
         # carros compra(many) <-> carrinho(one)
         carros_compra = db.relationship('CarrosCompra', backref = 'carros_compra_carrinho')
        
-
-
-def json(self):
-        return{
-            'preco_frete':self.preco_frete,
-            'quantidade':self.quantidade,
-            'preco_total':self.preco_total,
-            'cupom_desconto':self.cupom_desconto
-        }
-        
+        def json(self):
+                return{
+                'preco_frete':self.preco_frete,
+                'quantidade':self.quantidade,
+                'preco_total':self.preco_total,
+                'cupom_desconto':self.cupom_desconto
+                }

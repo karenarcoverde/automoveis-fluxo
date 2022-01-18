@@ -16,15 +16,13 @@ class Motos(db.Model):
         # motos(one) <-> motos compra(many)
         moto_compra = db.relationship('MotosCompra', backref = 'motos_compra')
         
-
-def json(self):
-        return{
-            'cor':self.cor,
-            'modelo':self.modelo,
-            'marca':self.marca,
-            'ano_fabricacao':self.ano_fabricacao,
-            'motor':self.motor,      
-            'estoque':self.estoque,
-            'preco':self.preco
-        }
-        
+        def json(self):
+                return{
+                'cor':self.cor,
+                'modelo':self.modelo,
+                'marca':self.marca,
+                'ano_fabricacao':self.ano_fabricacao,
+                'motor':self.motor,      
+                'estoque':self.estoque,
+                'preco':self.preco
+                }
