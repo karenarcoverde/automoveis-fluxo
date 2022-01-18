@@ -8,4 +8,11 @@ class Carrinho(db.Model):
         preco_total = db.Column(db.Integer, nullable = False)
         cupom_desconto = db.Column(db.Boolean, nullable = False)
 
+def json(self):
+        return{
+            'preco_frete':self.preco_frete,
+            'quantidade':self.quantidade,
+            'preco_total':self.preco_total,
+            'cupom_desconto':self.cupom_desconto
+        }
         

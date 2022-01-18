@@ -9,3 +9,13 @@ class Usuario(db.Model):
     telefone = db.Column(db.Integer, nullable = False)
     endereço = db.Column(db.String(30), nullable = False)
 
+
+def json(self):
+        return{
+            'nome':self.nome,
+            'cpf':self.cpf,
+            'email':self.email,
+            'telefone':self.telefone,
+            'endereço':self.endereço
+        }
+
