@@ -1,5 +1,17 @@
 from app.extensions import db
 
+# Carros
+# tabela que contem as informações sobre todos os carros
+# id => chave primária
+# cor => cor do carro: vermelho, branco, preto etc.
+# modelo => por exemplo Fiat Uno, modelo: Uno
+# marca => por exemplo Fiat uno, marca: Fiat
+# ano_fabricacao => ano em que foi fabricado o carro
+# motor => motor 1.0, 2.0 etc.
+# estoque => quantidade de um determinado carro que tem em estoque 
+# preco => preço do carro
+# nacional => se o carro é nacional (true) ou não (false)
+# importada => se o carro é importado (true) ou não (false)
 
 class Carros(db.Model):
         __tablename__ = 'carros'

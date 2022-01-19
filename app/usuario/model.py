@@ -1,5 +1,14 @@
 from ..extensions import db
 
+# Usuario
+# tabela que contem as configurações do usuário
+# id => chave primária
+# nome => nome completo do usuário
+# cpf => CPF do usuário
+# email => email do usuário
+# telefone => telefone residencial ou celular do usuário
+# endereço => endereço completo do usuário: rua, número, complemento etc.
+
 class Usuario(db.Model):
     __tablename__ = 'usuario'
     id = db.Column(db.Integer, primary_key = True)

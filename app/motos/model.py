@@ -1,5 +1,17 @@
 from app.extensions import db
 
+# Motos
+# tabela que contem as informações sobre todos os carros
+# id => chave primária
+# cor => cor da moto: vermelho, branco, preto etc.
+# modelo => por exemplo Suzuki Boulevard, modelo: Boulevard
+# marca => por exemplo Suzuki Boulevard, marca: Suzuki
+# ano_fabricacao => ano em que foi fabricado a moto
+# motor => motor 1.0, 2.0 etc.
+# estoque => quantidade de um determinada moto que tem em estoque 
+# preco => preço da moto
+# nacional => se a moto é nacional (true) ou não (false)
+# importada => se a moto é importada (true) ou não (false)
 
 class Motos(db.Model):
         __tablename__ = 'motos'

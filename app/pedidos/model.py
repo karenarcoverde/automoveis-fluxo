@@ -1,6 +1,13 @@
 from app.extensions import db
 from app.association import association_pedidos_carroscarrinho, association_pedidos_motoscarrinho
 
+# Pedidos
+# tabela com as informações referentes a junção das tabelas "carros carrinhos" e "motos carrinhos"
+# id => chave primária
+# data => data em que foi colocado no carrinho os carros e as motos
+# preco_frete => preço total do frete juntando os carrinhos do carro e da moto
+# preco_total => preço total juntando os carrinhos do carro e da moto
+
 class Pedidos(db.Model):
         __tablename__ = 'pedidos'
         id = db.Column(db.Integer, primary_key = True)  

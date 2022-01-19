@@ -1,6 +1,13 @@
 from app.extensions import db
 from app.association import association_pedidos_carroscarrinho
 
+# CarrosCarrinho
+# tabela que contem os carros colocados no carrinho pelo usuário
+# id => chave primária
+# quantidade => quantidade de carros colocados no carrinho 
+# preco_unitario => preço de somente um carro
+# preco_total => preço total de todos os carros colocados 
+
 class CarrosCarrinho(db.Model):
         __tablename__ = 'carroscarrinho'
         id = db.Column(db.Integer, primary_key = True)
