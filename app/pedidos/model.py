@@ -15,15 +15,14 @@ class Pedidos(db.Model):
         preco_frete = db.Column(db.Integer, primary_key = True)
         preco_total = db.Column(db.Integer, primary_key = True)
 
-
-        # carrinho(one) <-> usuario(one)
+        # pedidos(many) <-> usuario(one)
         usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
         # pedidos(many) <-> carros carrinho(many)
-        carros_compra = db.relationship('CarrosCarrinho', secondary=association_pedidos_carroscarrinho, backref='carrosCarrinho_pedido')
+        carroscarrinho = db.relationship('CarrosCarrinho', secondary=association_pedidos_carroscarrinho, backref='carrosCarrinho_pedido')
 
         # pedidos(many) <-> motos carrinho(many)
-        motos_compra = db.relationship('MotosCarrinho', secondary=association_pedidos_motoscarrinho, backref='motosCarrinho_pedido')
+        motoscarrinho = db.relationship('MotosCarrinho', secondary=association_pedidos_motoscarrinho, backref='motosCarrinho_pedido')
 
 
         def json(self):

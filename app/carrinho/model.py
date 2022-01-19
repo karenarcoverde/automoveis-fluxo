@@ -20,6 +20,7 @@ class Carrinho(db.Model):
 
         # carrinho(one) <-> usuario(one)
         usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+        usuario = db.relationship("Usuario", back_populates="carrinho")
 
         # motos carrinho(many) <-> carrinho(one)
         motos_carrinho = db.relationship('MotosCarrinho', backref = 'motosCarrinho_carrinho')

@@ -19,7 +19,7 @@ class Usuario(db.Model):
     endereço = db.Column(db.String(30), nullable = False)
 
     # carrinho(one) <-> usuario(one)
-    carrinho_id = db.Column(db.Integer, db.ForeignKey('carrinho.id'))
+    carrinho = db.relationship("carrinho", back_populates="usuario", uselist=False)
 
     # pedidos(many) <-> usuario(one)
     pedido = db.relationship('Pedidos', backref = 'pedido_usuario')
