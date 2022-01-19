@@ -5,11 +5,11 @@ from app.extensions import db, migrate
 from app.usuario.model import Usuario
 from app.carros.model import Carros
 from app.carrinho.model import Carrinho
-from app.carrosCompra.model import CarrosCompra
+from app.carrosCarrinho.model import CarrosCarrinho
 from app.cupons.model import Cupons
 from app.motos.model import Motos
-from app.motosCompra.model import MotosCompra
-from app.requisicoes.model import Requisicoes
+from app.motosCarrinho.model import MotosCarrinho
+from app.pedidos.model import Pedidos
 
 # cria o app
 def create_app():

@@ -10,11 +10,13 @@ class Motos(db.Model):
         ano_fabricacao = db.Column(db.Integer, nullable = False)
         motor = db.Column(db.String(10), nullable = False)
         estoque = db.Column(db.Integer, nullable = False)
-        preco = db.Column(db.Integer, nullable = False)
+        preco = db.Column(db.Integer, nullable = False)   
+        nacional = db.Column(db.Boolean, nullable = False)
+        importada = db.Column(db.Boolean, nullable = False)
 
 
-        # motos(one) <-> motos compra(many)
-        moto_compra = db.relationship('MotosCompra', backref = 'motos_compra')
+        # motos(one) <-> motos carrinho(many)
+        moto_carrinho = db.relationship('MotosCarrinho', backref = 'motosCarrinho')
         
         def json(self):
                 return{
@@ -24,5 +26,7 @@ class Motos(db.Model):
                 'ano_fabricacao':self.ano_fabricacao,
                 'motor':self.motor,      
                 'estoque':self.estoque,
-                'preco':self.preco
+                'preco':self.preco,
+                'nacional':self.nacional,
+                'importada':self.importada
                 }

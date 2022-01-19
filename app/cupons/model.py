@@ -4,6 +4,7 @@ from app.extensions import db
 class Cupons(db.Model):
         __tablename__ = 'cupons'
         id = db.Column(db.Integer, primary_key = True)
+        codigo_cupom = db.Column(db.Integer, nullable = False)
         valor_desconto = db.Column(db.Integer, nullable = False)
         quantidade = db.Column(db.Integer, nullable = False)
         categoria = db.Column(db.String(20), nullable = False)
@@ -14,6 +15,7 @@ class Cupons(db.Model):
          
         def json(self):
                 return{
+                'codigo_cupom':self.codigo_cupom,
                 'valor_desconto':self.valor_desconto,
                 'quantidade':self.quantidade,
                 'categoria':self.categoria,

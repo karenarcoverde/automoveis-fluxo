@@ -12,8 +12,8 @@ class Usuario(db.Model):
     # carrinho(one) <-> usuario(one)
     carrinho_id = db.Column(db.Integer, db.ForeignKey('carrinho.id'))
 
-    # requisicoes(many) <-> usuario(one)
-    requisicao = db.relationship('Requisicoes', backref = 'requisicao_usuario')
+    # pedidos(many) <-> usuario(one)
+    pedido = db.relationship('Pedidos', backref = 'pedido_usuario')
 
     # cupons(many) <-> usuario(one)
     cupom = db.relationship('Cupons', backref = 'cupons_usuario')

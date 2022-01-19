@@ -1,24 +1,22 @@
 from app.extensions import db
-from app.association import association_requisicoes_motos_compra
+from app.association import association_pedidos_motoscarrinho
 
-class MotosCompra(db.Model):
-        __tablename__ = 'motoscompra'
+class MotosCarrinho(db.Model):
+        __tablename__ = 'motoscarrinho'
         id = db.Column(db.Integer, primary_key = True)
         quantidade = db.Column(db.Integer, nullable = False)
         preco_unitario = db.Column(db.Integer, nullable = False)
         preco_total = db.Column(db.Integer, nullable = False)
 
 
-        # motos compra (many) <-> carrinho(one)
+        # motos carrinho (many) <-> carrinho(one)
         carrinho_id = db.Column(db.Integer, db.ForeignKey('carrinho.id'))
 
-        # motos(one) <-> motos compra(many)
+        # motos(one) <-> motos carrinho(many)
         motos_id = db.Column(db.Integer, db.ForeignKey('motos.id'))
 
-        # requisicoes(many) <-> motos compra(many)
-        requisicoes = db.relationship('Requisicoes', secondary=association_requisicoes_motos_compra, backref='requisicao_motos_compra')
-
-
+        # pedidos(many) <-> motos carrinho(many)
+        pedidos = db.relationship('Pedidos', secondary=association_pedidos_motoscarrinho, backref='pedido_motosCarrinho')
 
         def json(self):
                 return{

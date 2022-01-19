@@ -1,8 +1,8 @@
 from app.extensions import db
-from app.association import association_requisicoes_carros_compra, association_requisicoes_motos_compra
+from app.association import association_pedidos_carroscarrinho, association_pedidos_motoscarrinho
 
-class Requisicoes(db.Model):
-        __tablename__ = 'requisicoes'
+class Pedidos(db.Model):
+        __tablename__ = 'pedidos'
         id = db.Column(db.Integer, primary_key = True)  
         data = db.Column(db.Date, nullable = False)
         preco_frete = db.Column(db.Integer, primary_key = True)
@@ -12,11 +12,11 @@ class Requisicoes(db.Model):
         # carrinho(one) <-> usuario(one)
         usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
-        # requisicoes(many) <-> carros compra(many)
-        carros_compra = db.relationship('CarrosCompra', secondary=association_requisicoes_carros_compra, backref='carros_compra_requisicao')
+        # pedidos(many) <-> carros carrinho(many)
+        carros_compra = db.relationship('CarrosCarrinho', secondary=association_pedidos_carroscarrinho, backref='carrosCarrinho_pedido')
 
-        # requisicoes(many) <-> motos compra(many)
-        motos_compra = db.relationship('MotosCompra', secondary=association_requisicoes_motos_compra, backref='motos_compra_requisicao')
+        # pedidos(many) <-> motos carrinho(many)
+        motos_compra = db.relationship('MotosCarrinho', secondary=association_pedidos_motoscarrinho, backref='motosCarrinho_pedido')
 
 
         def json(self):
